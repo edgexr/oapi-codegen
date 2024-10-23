@@ -239,6 +239,9 @@ type OutputOptions struct {
 
 	// Overlay defines configuration for the OpenAPI Overlay (https://github.com/OAI/Overlay-Specification) to manipulate the OpenAPI specification before generation. This allows modifying the specification without needing to apply changes directly to it, making it easier to keep it up-to-date.
 	Overlay OutputOptionsOverlay `yaml:"overlay"`
+
+	// GenAnonymousObjects generates separate struct definitions for embedded anonymous objects.
+	GenAnonymousObjects bool `yaml:"gen-anonymous-objs,omitempty"`
 }
 
 func (oo OutputOptions) Validate() map[string]string {
