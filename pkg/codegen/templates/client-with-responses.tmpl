@@ -74,6 +74,12 @@ func (r {{genResponseTypeName $opid | ucFirst}}) StatusCode() int {
     }
     return 0
 }
+
+// GetBody returns the HTTP response's body
+func (r {{genResponseTypeName $opid | ucFirst}}) GetBody() []byte {
+    return r.Body
+}
+
 {{end}}
 
 
